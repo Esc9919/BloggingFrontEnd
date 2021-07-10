@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+#botao {
+    position:absolute;
+    left:80%;
+    height:50%;
+    margin-top: -3%;
+    padding-bottom: 1.5%;
+}
+
+p {
+    margin-left: 25%;
+    margin-right: 25%;
+    text-align: justify;
+}
+
+#texto {
+    margin-bottom: 50px;
+}
