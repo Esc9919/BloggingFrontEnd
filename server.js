@@ -8,7 +8,7 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 })
 app.get('/post', (req, res) => {
-    res.sendFile(__dirname + '/post01.html');
+    res.sendFile(__dirname + '/public/post.html');
 })
 app.listen(3000, () => {
     console.log()
