@@ -7,9 +7,11 @@ app.use(express.static(__dirname + 'test.html'));
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 })
+
 app.get('/post', (req, res) => {
     res.sendFile(__dirname + '/public/post.html');
 })
+
 app.listen(3000, () => {
     console.log()
     console.log('listening on port 3000')
