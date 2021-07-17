@@ -1,0 +1,12 @@
+@charset "UTF-8";
+
+#logo {
+    margin-left: 20px;}
+
+form {
+    border: 1px solid;
+    border-radius: 25px;
+    margin: 10%;
+    padding: 50px;
+    text-align: center;
+}
