@@ -3,13 +3,16 @@ const app = express();
 
 const http = require('./http/http-home.js');
 
-
-
 app.use(express.static(__dirname + '/public'));
 app.use(express.static(__dirname + 'test.html'));
 
+/* HOME */
 app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
+})
+
+app.get('/data/user', (req, res) => {
+    res.send(http.get());
 })
 
 app.get('/post', (req, res) => {
@@ -25,6 +28,5 @@ app.get('/cadastro', (req, res) => {
 })
 
 app.listen(3000, () => {
-    console.log()
     console.log('listening on port 3000')
 })
