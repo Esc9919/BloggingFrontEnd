@@ -11,16 +11,6 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + '/public/index.html');
 })
 
-app.get('/data/user', (req, res) => {
-    let user;
-    http.get().then ( u => {
-        user = u;
-        
-        console.log(user);
-        res.send(user);
-    })
-})
-
 app.get('/post', (req, res) => {
     res.sendFile(__dirname + '/public/post.html');
 })
@@ -31,6 +21,18 @@ app.get('/cadastroEmail', (req, res) => {
 
 app.get('/cadastro', (req, res) => {
     res.sendFile(__dirname + '/public/cadastro.html');
+})
+
+/* API */
+
+app.get('/data/user', (req, res) => {
+    
+    let user;
+    http.get().then ( u => {
+        user = u;
+        
+        res.send(user);
+    })
 })
 
 app.listen(3000, () => {
