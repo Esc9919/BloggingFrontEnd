@@ -12,7 +12,13 @@ app.get('/', (req, res) => {
 })
 
 app.get('/data/user', (req, res) => {
-    res.send(http.get());
+    let user;
+    http.get().then ( u => {
+        user = u;
+        
+        console.log(user);
+        res.send(user);
+    })
 })
 
 app.get('/post', (req, res) => {

@@ -1,8 +1,7 @@
 const axios = require('axios');
 
-function get() {
-  
-  axios.get('https://bloggingapirest.herokuapp.com/user')
+async function get() {
+  return axios.get('https://bloggingapirest.herokuapp.com/user')
   .then(function (response) {
         return response.data;
       })
