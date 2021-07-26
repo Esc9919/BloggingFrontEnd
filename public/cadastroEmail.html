@@ -13,10 +13,13 @@
         <img src="img/Blogging.jpg" id="logo"/>
         <hr>        
     </header>
-    <form action="post">
-        <input type="Email" placeholder="Email" class="form-control form-control-lg"/> 
+    <div class="form">
+        <input id="email" type="Email" placeholder="Email" class="form-control form-control-lg"/> 
         <br>
-        <button type="submit" class="btn btn-success">Prosseguir</button>
-    </form>
+        <span id="error-msg"></span><br/><br/>
+        <button onclick="verifyEmail()" class="btn btn-success">Prosseguir</button>
+    </div>
 </body>
 </html>
+
+<script src="js/cadastroEmail.js"></script>
