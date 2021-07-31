@@ -4,7 +4,12 @@ const app = express();
 const http = require('./http/http-home.js');
 
 app.use(express.static(__dirname + '/public'));
-//app.use(express.static(__dirname + 'test.html'));
+
+var bodyParser = require('body-parser'); 
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
 
 /* HOME */
 app.get('/', (req, res) => {
@@ -14,6 +19,11 @@ app.get('/', (req, res) => {
 /* DEVOLVE A PÁGINA DETALHADA DO POST */
 app.get('/post', (req, res) => {
     res.sendFile(__dirname + '/public/post.html');
+})
+
+/* DEVOLVE A PÁGINA DE LOGIN */
+app.get('/login', (req, res) => {
+    res.sendFile(__dirname + '/public/login.html');
 })
 
 
@@ -57,6 +67,12 @@ app.get('/cadastroEmail/isemailvalid', (req, res) => {
         }
     });
 })
+/* atentica usuario */
+app.post('/login', (req, res) => {
+    http.autenticacao(req.body).then(retorno => {
+        console.log(retorno)
+    })
+});
 
 /* LIGANDO O SERVIDOR... */
 app.listen(3000, () => {
