@@ -13,15 +13,15 @@
         <a href="index.html" target="_self" real="prev"><img src="img/Blogging.jpg" id="logo"/></a>
         <hr>        
     </header>
-    <form action="http://localhost:3000/login" method="POST">
+    <div class="form">
         <input id="username" name="username" type="username" placeholder="Nome de Usuário" class="form-control form-control-lg"/> 
         <br>
         <input id="password" name="password" type="password" placeholder="Senha" class="form-control form-control-lg"/>
         <br>
         <span id="error-msg"></span><br/><br/>
-        <button type="submit" class="btn btn-success">Entrar</button>
+        <button onclick="login()" class="btn btn-success">Entrar</button>
     </form>
 </body>
 </html>
 
-<script src="js/cadastroEmail.js"></script>
+<script src="js/login.js"></script>

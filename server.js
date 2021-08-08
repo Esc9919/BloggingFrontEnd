@@ -69,8 +69,10 @@ app.get('/cadastroEmail/isemailvalid', (req, res) => {
 })
 /* atentica usuario */
 app.post('/login', (req, res) => {
-    http.autenticacao(req.body).then(retorno => {
+    console.log(req.body)
+    http.autenticacao(JSON.parse(JSON.stringify({username: req.body.username, password: req.body.password}))).then(retorno => {
         console.log(retorno)
+        res.send(retorno)
     })
 });
 

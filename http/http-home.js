@@ -23,9 +23,15 @@ async function isEmailValid(email) {
   });
 }
 
-/* VERIFICA SE EMAIL É VÁLIDO NO BACKEND*/ 
+/* Autentica usuário existente */ 
 async function autenticacao(usuario) {
-  return await axios.post('https://bloggingapirest.herokuapp.com/auth', usuario)
+
+  console.log(usuario.username)
+
+  return await axios.post('https://bloggingapirest.herokuapp.com/auth', {
+    username: usuario.username,
+    password: usuario.password
+  })
   .then(function (response) {
     console.log(response);
     console.log(JSON.parse(response))
@@ -36,5 +42,6 @@ async function autenticacao(usuario) {
     return null;
   });
 }
+
 
 module.exports = { get, isEmailValid, autenticacao }
